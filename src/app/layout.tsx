@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css";
+import { NextAuthProvider } from "./next-auth-provider";
 
 export const fontSans = FontSans({
     subsets: ["latin"],
@@ -33,7 +34,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
 
-            {children}
+<NextAuthProvider>{children}</NextAuthProvider>
           </ThemeProvider>
             </body>
     </html>
